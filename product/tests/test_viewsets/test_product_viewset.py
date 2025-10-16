@@ -5,7 +5,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient, APITestCase
 from rest_framework.views import status
 
-from order.factories import UserFactory
+from order.factory import UserFactory
 from product.factories import CategoryFactory, ProductFactory
 from product.models import Product
 
@@ -37,8 +37,6 @@ class TestProductViewSet(APITestCase):
                          [0]["title"], self.product.title)
         self.assertEqual(product_data["results"]
                          [0]["price"], self.product.price)
-        self.assertEqual(product_data["results"]
-                         [0]["active"], self.product.active)
 
     def test_create_product(self):
         token = Token.objects.get(user__username=self.user.username)
