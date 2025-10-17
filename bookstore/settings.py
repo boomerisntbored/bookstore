@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "order",
     "product",
     "rest_framework",
-    "debug_toolbar",
     "rest_framework.authtoken",
 ]
 
